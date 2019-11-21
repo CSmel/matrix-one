@@ -26,28 +26,24 @@
 
   export default {
     name: "MatrixMonitor",
-
     data() {
       return {
         show: 0,
         filterdMessages: [],
       }
     },
-    props: ['messages'],
+    props: {
+      messages: String
+    },
     components: {
     },
-
     mounted() {
-
       for (let i = this.show; i < this.messages.length; i++) {
         this.doSetTimeout(i);
-
       }
     },
-
     methods: {
       doSetTimeout: function (ind) {
-
         var vm = this;
         let messages = vm.filterdMessages;
 
@@ -56,14 +52,9 @@
           if (ind === vm.messages.length) {
             return
           }
-
-
         }, 3000 + (4000 * ind));
       },
-
     },
-    computed: {},
-
   }
 </script>
 <style>
@@ -72,10 +63,8 @@
   }
   .output-text {
    background-color: #22261C;
-
     height: 36%;
     width: 42%;
-
     position: absolute;
     margin: auto;
     top: 0;

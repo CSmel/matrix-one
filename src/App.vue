@@ -2,11 +2,11 @@
   <div id="app">
     <div class="container-outer">
       <div class="computer-container">
-        <computer />
+        <matrix-computer></matrix-computer>
       </div>
       <div class="message-container">
 
-        <monitor :messages="messages" />
+        <matrix-monitor :messages="messages" ></matrix-monitor>
 
       </div>
 
@@ -16,14 +16,14 @@
 </template>
 
 <script>
-  import Computer from './components/MatrixComputer.vue'
-  import Monitor from './components/MatrixMonitor.vue'
+  import MatrixComputer from './components/MatrixComputer.vue'
+  import MatrixMonitor from './components/MatrixMonitor.vue'
 export default {
 
   name: 'app',
   components:{
-    'computer' : Computer,
-    'monitor': Monitor,
+    'matrix-computer' : MatrixComputer,
+    'matrix-monitor': MatrixMonitor,
   },
   data () {
     return {
